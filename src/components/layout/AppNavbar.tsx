@@ -6,6 +6,7 @@ import { useSession, signOut } from "next-auth/react";
 import axios from "axios";
 import { LoginModal } from "../modals/LoginModal";
 import { BecomeHostModal } from "../modals/BecomeHostModal";
+import { BrandLogo } from "./BrandLogo";
 
 export function AppNavbar() {
   const [loginOpen, setLoginOpen] = useState(false);
@@ -46,14 +47,8 @@ export function AppNavbar() {
     <>
       <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200/60 bg-white/80 backdrop-blur-xl shadow-sm">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
-          <Link
-            href="/"
-            className="flex items-center gap-2 text-lg font-semibold text-slate-900"
-          >
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-emerald-500/90 text-base font-bold tracking-tight text-white shadow-lg shadow-emerald-500/40">
-              P
-            </span>
-            <span>Parkit</span>
+          <Link href="/" className="flex items-center" aria-label="Parkit home">
+            <BrandLogo size={40} />
           </Link>
 
           {/* Navigation Links */}

@@ -6,6 +6,7 @@ import { useSession, signOut } from "next-auth/react";
 import { LoginModal } from "../modals/LoginModal";
 import { BecomeHostModal } from "../modals/BecomeHostModal";
 import axios from "axios";
+import { BrandLogo } from "./BrandLogo";
 
 export function MapNavbar() {
   const [loginOpen, setLoginOpen] = useState(false);
@@ -48,41 +49,8 @@ export function MapNavbar() {
       <nav className="z-30 relative border-b border-slate-200/50 bg-white/95 backdrop-blur-2xl shadow-sm">
         <div className="flex items-center justify-between px-4 md:px-6 lg:px-8 py-3 md:py-4">
           {/* Left - Logo & Brand */}
-          <Link href="/" className="flex items-center gap-2 md:gap-3">
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-xl blur opacity-25 group-hover:opacity-40 transition duration-200"></div>
-              <div className="relative flex h-9 w-9 md:h-11 md:w-11 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 shadow-lg shadow-emerald-500/30">
-                <svg
-                  className="h-5 w-5 md:h-6 md:w-6 text-white"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                >
-                  <path
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div>
-              <h1 className="text-lg md:text-2xl font-bold tracking-tight">
-                <span className="text-slate-900">Park</span>
-                <span className="bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-500 bg-clip-text text-transparent">
-                  it
-                </span>
-              </h1>
-              <p className="hidden md:block text-xs text-slate-500 font-medium">
-                Find & Reserve Parking
-              </p>
-            </div>
+          <Link href="/" className="flex items-center" aria-label="Parkit home">
+            <BrandLogo size={44} showTagline />
           </Link>
 
           {/* Right - User Menu */}
